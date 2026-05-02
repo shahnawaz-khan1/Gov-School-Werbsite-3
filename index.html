@@ -9,92 +9,181 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Merriweather:wght@700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* --- Desktop & Base Styles Fix --- */
+    .nav-links {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    /* --- Responsive Breakpoints --- */
+
+    /* Tablet: 1024px and below */
+    @media (max-width: 1024px) {
+      nav {
+        padding: 0 2vw;
+      }
+
+      .nav-links a,
+      .nav-links .dropbtn {
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+
+      .split-container {
+        gap: 30px;
+      }
+    }
+
+    
+
+    /* Small Phones: 600px and below */
+    @media (max-width: 600px) {
+      .nav-school .name {
+        font-size: 13px;
+      }
+
+      .nav-school .loc {
+        display: none;
+        /* Mobile par location chhupa sakte hain space ke liye */
+      }
+
+      .info-grid,
+      .fac-grid,
+      .prog-grid,
+      .ql-grid {
+        grid-template-columns: 1fr;
+        /* Chote mobile par sab ek ke niche ek */
+      }
+
+      .hcard {
+        min-width: 45%;
+        /* Hero cards side-by-side */
+      }
+
+      .carousel-wrap {
+        height: 50vh;
+        /* Mobile par height kam */
+      }
+
+      .carousel-slide img {
+        height: 50vh;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .contact {
+        margin-left: 8vw;
+      }
+
+      .form-card {
+        margin-left: -8vw;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <nav>
-  <div class="nav-left">
-    <div class="logo"><img src="logo1.png" alt="RMS Logo"></div>
-    <div class="nav-school">
-      <div class="name">Ram Mohan Roy Seminary +2</div>
-      <div class="loc">Khajanchi Road, Patna — Est. 1897</div>
-    </div>
-  </div>
-
-  <div class="nav-links">
-    <!-- Home -->
-    <div class="dropdown">
-      <a href="#Home" class="dropbtn">HOME</a>
-    </div>
-
-    <!-- About Dropdown -->
-    <div class="dropdown">
-      <a href="#about" class="dropbtn">ABOUT</a>
-      <div class="dropdown-content">
-        <a href="#">ABOUT US</a>
-        <a href="#">MEET OUR ACADEMIC PARTNERS</a>
-        <a href="#">VISION & MISSION</a>
-        <a href="#">PRIVACY POLICY</a>
+    <div class="nav-left">
+      <div class="logo"><img src="logo1.png" alt="RMS Logo"></div>
+      <div class="nav-school">
+        <div class="name">Ram Mohan Roy Seminary +2</div>
+        <div class="loc">Khajanchi Road, Patna — Est. 1897</div>
       </div>
     </div>
 
-    <!-- Our Programmes Dropdown -->
-    <div class="dropdown">
-      <a href="#programmes" class="dropbtn">OUR PROGRAMMES</a>
-      <div class="dropdown-content">
-        <a href="#">MIDDLE SCHOOL</a>
-        <a href="#">PRIMARY</a>
-        <a href="#">PRE-PRIMARY</a>
-        <a href="#">ADMISSIONS</a>
+    <div class="nav-links" id="navLinks">
+      <!-- Home -->
+      <div class="dropdown">
+        <a href="#Home" class="dropbtn">HOME</a>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <a href="#about" class="dropbtn">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="#">ABOUT US</a>
+          <a href="#">MEET OUR ACADEMIC PARTNERS</a>
+          <a href="#">VISION & MISSION</a>
+          <a href="#">PRIVACY POLICY</a>
+        </div>
+      </div>
+
+      <!-- Our Programmes Dropdown -->
+      <div class="dropdown">
+        <a href="#programmes" class="dropbtn">OUR PROGRAMMES</a>
+        <div class="dropdown-content">
+          <a href="#">MIDDLE SCHOOL</a>
+          <a href="#">PRIMARY</a>
+          <a href="#">PRE-PRIMARY</a>
+          <a href="#">ADMISSIONS</a>
+        </div>
+      </div>
+
+      <!-- Academics Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">ACADEMICS</a>
+        <div class="dropdown-content">
+          <a href="#">ACADEMICS CALENDAR</a>
+          <a href="#">RMRS CURRICULUM</a>
+          <a href="#">SCHOOL CURRICULUM</a>
+          <a href="#">TRANSFER CERTIFICATE</a>
+          <a href="#">RESULT</a>
+        </div>
+      </div>
+
+      <!-- Facilities Dropdown -->
+      <div class="dropdown">
+        <a href="#facilities" class="dropbtn">FACILITIES</a>
+        <div class="dropdown-content">
+          <a href="#">HITECH MODERN LABS</a>
+          <a href="#">DIGITAL CLASSROOM</a>
+          <a href="#">RMRS PLAY</a>
+          <a href="#">SCHOOL MANAGEMENT SYSTEM</a>
+          <a href="#">INDOOR GAMES</a>
+          <a href="#">CO-CURRICULAR ACTIVITIES</a>
+          <a href="#">OUTDOOR GAMES</a>
+          <a href="#">SECURE CAMPUS</a>
+          <a href="#">TRANSPORT</a>
+        </div>
+      </div>
+
+      <!-- Gallery Dropdown -->
+      <div class="dropdown">
+        <a href="#gallery" class="dropbtn">GALLERY</a>
+        <div class="dropdown-content">
+          <a href="#">IMAGES</a>
+          <a href="#">VIDEOS</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="dropdown">
+        <a href="#contact" class="dropbtn">CONTACT US</a>
       </div>
     </div>
 
-    <!-- Academics Dropdown -->
-    <div class="dropdown">
-      <a href="#" class="dropbtn">ACADEMICS</a>
-      <div class="dropdown-content">
-        <a href="#">ACADEMICS CALENDAR</a>
-        <a href="#">RMRS CURRICULUM</a>
-        <a href="#">SCHOOL CURRICULUM</a>
-        <a href="#">TRANSFER CERTIFICATE</a>
-        <a href="#">RESULT</a>
-      </div>
-    </div>
+    <a href="#contact" class="nav-admit">ENQUIRE NOW</a>
 
-    <!-- Facilities Dropdown -->
-    <div class="dropdown">
-      <a href="#facilities" class="dropbtn">FACILITIES</a>
-      <div class="dropdown-content">
-        <a href="#">HITECH MODERN LABS</a>
-        <a href="#">DIGITAL CLASSROOM</a>
-        <a href="#">RMRS PLAY</a>
-        <a href="#">SCHOOL MANAGEMENT SYSTEM</a>
-        <a href="#">INDOOR GAMES</a>
-        <a href="#">CO-CURRICULAR ACTIVITIES</a>
-        <a href="#">OUTDOOR GAMES</a>
-        <a href="#">SECURE CAMPUS</a>
-        <a href="#">TRANSPORT</a>
-      </div>
+    <!-- Hamburger button -->
+    <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <!-- Gallery Dropdown -->
-    <div class="dropdown">
-      <a href="#gallery" class="dropbtn">GALLERY</a>
-      <div class="dropdown-content">
-        <a href="#">IMAGES</a>
-        <a href="#">VIDEOS</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="dropdown">
-      <a href="#contact" class="dropbtn">CONTACT US</a>
-    </div>
-  </div>
-
-  <a href="#contact" class="nav-admit">ENQUIRE NOW</a>
-</nav>
+  </nav>
 
   <!-- NOTICE -->
   <div class="notice">
@@ -140,43 +229,49 @@
 
 
   <!-- new hero section -->
-   <section class="modern-split-section"></section>
-    <div class="split-container">
-        <!-- Text Side -->
-        <div class="split-content">
-            <span class="admission-badge">✨ Admissions Open for 2026-27</span>
-            <h2 class="split-title">Where Every Child <br><span>Shines Bright</span></h2>
-            <p class="split-desc">
-                Ram Mohan Roy Seminary +2 (RMRS), a trusted semi-government institution 
-                established in 1897, provides quality, affordable education with strong 
-                values, modern facilities and a caring environment from Class 6 to 12.
-            </p>
-            <div class="split-btns">
-                <a href="#contact" class="btn-orange">Apply for Admission →</a>
-                <a href="#about" class="btn-light">Learn More</a>
-            </div>
-            
-            <div class="mini-stats-row">
-                <div class="m-stat"><strong>60,000+</strong><p>Students</p></div>
-                <div class="m-stat"><strong>150+</strong><p>Teachers</p></div>
-                <div class="m-stat"><strong>127+</strong><p>Years</p></div>
-            </div>
-        </div>
+  <section class="modern-split-section"></section>
+  <div class="split-container">
+    <!-- Text Side -->
+    <div class="split-content">
+      <span class="admission-badge">✨ Admissions Open for 2026-27</span>
+      <h2 class="split-title">Where Every Child <br><span>Shines Bright</span></h2>
+      <p class="split-desc">
+        Ram Mohan Roy Seminary +2 (RMRS), a trusted semi-government institution
+        established in 1897, provides quality, affordable education with strong
+        values, modern facilities and a caring environment from Class 6 to 12.
+      </p>
+      <div class="split-btns">
+        <a href="#contact" class="btn-orange">Apply for Admission →</a>
+        <a href="#about" class="btn-light">Learn More</a>
+      </div>
 
-        <!-- Image Side (Exactly like your reference) -->
-        <div class="split-visual">
-            <div class="image-card">
-                <img src="murshid.jpeg" alt="RMRS Students">
-                <!-- Floating Pass Rate Badge -->
-                <div class="pass-rate-badge">
-                    <span class="label">Pass Rate</span>
-                    <span class="number">90%</span>
-                </div>
-            </div>
+      <div class="mini-stats-row">
+        <div class="m-stat"><strong>60,000+</strong>
+          <p>Students</p>
         </div>
+        <div class="m-stat"><strong>150+</strong>
+          <p>Teachers</p>
+        </div>
+        <div class="m-stat"><strong>127+</strong>
+          <p>Years</p>
+        </div>
+      </div>
     </div>
-</section>
-  
+
+    <!-- Image Side (Exactly like your reference) -->
+    <div class="split-visual">
+      <div class="image-card">
+        <img src="murshid.jpeg" alt="RMRS Students">
+        <!-- Floating Pass Rate Badge -->
+        <div class="pass-rate-badge">
+          <span class="label">Pass Rate</span>
+          <span class="number">90%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-grid">
@@ -231,7 +326,7 @@
       </div>
     </div>
   </div>
-<!-- CAROUSEL -->
+  <!-- CAROUSEL -->
 
   <section class="carousel-section" id="gallery">
     <p class="sec-tag">School Life</p>
@@ -605,52 +700,65 @@
   </footer>
 
   <script>
+   function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const burger = document.getElementById('hamburgerBtn');
+
+    if (nav && burger) {
+        nav.classList.toggle('active');
+        burger.classList.toggle('active');
+        console.log("Menu Toggle Success!");
+    } else {
+        console.log("Error: Elements not found. Check IDs!");
+    }
+}
+
+// Menu band karne ke liye jab link par click ho
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('hamburgerBtn').classList.remove('active');
+    });
+});
+    /* --- Carousel Logic (Pehle wala hi hai, bas cur fix kiya) --- */
     const track = document.getElementById('track');
-    const slides = Array.from(track.children);
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('prev');
 
-    // Infinite Loop Logic
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
+    if (track && nextBtn && prevBtn) {
+      const slides = Array.from(track.children);
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slides.length - 1].cloneNode(true);
 
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, slides[0]);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, slides[0]);
 
-    let cur = 1;
-    const totalWithClones = track.children.length;
-    let timer;
+      let cur = 1;
+      track.style.transform = `translateX(-100%)`;
 
-    track.style.transform = `translateX(-100%)`;
+      function goTo(n) {
+        cur = n;
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(-${cur * 100}%)`;
 
-    function goTo(n) {
-      cur = n;
-      track.style.transition = "transform 0.5s ease-in-out";
-      track.style.transform = `translateX(-${cur * 100}%)`;
+        track.addEventListener('transitionend', () => {
+          if (cur >= track.children.length - 1) {
+            track.style.transition = "none";
+            cur = 1;
+            track.style.transform = `translateX(-100%)`;
+          }
+          if (cur <= 0) {
+            track.style.transition = "none";
+            cur = track.children.length - 2;
+            track.style.transform = `translateX(-${cur * 100}%)`;
+          }
+        });
+      }
 
-      track.addEventListener('transitionend', () => {
-        if (track.children[cur] === firstClone) {
-          track.style.transition = "none";
-          cur = 1;
-          track.style.transform = `translateX(-100%)`;
-        }
-        if (track.children[cur] === lastClone) { // Fixed typo: lastCl to lastClone
-          track.style.transition = "none";
-          cur = totalWithClones - 2;
-          track.style.transform = `translateX(-${cur * 100}%)`;
-        }
-      });
+      nextBtn.onclick = () => goTo(cur + 1);
+      prevBtn.onclick = () => goTo(cur - 1);
+      setInterval(() => goTo(cur + 1), 5000);
     }
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(() => goTo(cur + 1), 4000);
-    }
-
-    nextBtn.onclick = () => { goTo(cur + 1); resetTimer(); };
-    prevBtn.onclick = () => { goTo(cur - 1); resetTimer(); };
-
-    resetTimer();
   </script>
 </body>
 

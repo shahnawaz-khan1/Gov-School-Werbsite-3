@@ -34,8 +34,8 @@ nav {
   background: var(--blue);
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
-  gap: 10vw;
+  justify-content: space-between;
+  /* gap: 10vw; */
   padding: 0 4vw;
   height: 64px;
   box-shadow: 0 2px 12px rgba(21, 101, 192, 0.25)
@@ -109,7 +109,7 @@ nav {
   font-size: 13px;
   text-decoration: none;
   transition: all 0.2s;
-  margin-left: 8vw;
+  /* margin-left: 8vw; */
 }
 
 .nav-admit:hover {
@@ -904,6 +904,10 @@ footer {
     display: none
   }
 
+  .nav-admit{
+    font-size: 11px;
+  }
+ 
   .slide-placeholder {
     height: 260px
   }
@@ -928,12 +932,11 @@ footer {
 
   
   .nav-links {
-    display: none
+    display: none !important;
   }
 
-
   .nav-school .name {
-    font-size: 12px
+    font-size: 16px !important;
   }
   .nav-school .loc {
     font-size: 10px
@@ -1167,7 +1170,45 @@ footer {
     bottom: -20px;
   }
 }
+@media (max-width: 900px) {
+  .nav-admit { display: none !important; }
 
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 0;
+    right: -100% !important; /* Screen ke bahar right side mein */
+    width: 280px !important;
+    height: 100vh !important;
+    background: #1565C0 !important;
+    padding: 80px 20px !important;
+    transition: 0.4s ease-in-out !important;
+    z-index: 10000 !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+
+  /* Menu khulne par ye apply hoga */
+  .nav-links.active {
+    right: 0 !important;
+  }
+
+  .nav-links .dropdown { width: 100%; }
+  .nav-links a { width: 100%; font-size: 18px; }
+
+  /* Hamburger to X Animation */
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
+}
 
 /* Dropdown Container */
 .dropdown {
@@ -1241,4 +1282,78 @@ nav {
 .nav-links {
   display: flex;
   gap: 0; /* Gap zero taaki items touch karein hover par */
+}
+
+
+
+/* Hamburger Styling */
+.hamburger {
+  display: none; /* Desktop par chhupa rahega */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 300;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Mobile Media Query (900px ya niche) */
+@media (max-width: 900px) {
+  .nav-admit {
+    display: none; /* Enquiry Button Hata diya */
+  }
+
+  .hamburger {
+    display: flex; /* Hamburger dikhne lagega */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; /* Nav ki height ke niche se shuru */
+    left: -100%; /* Shuruat mein screen ke bahar */
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: var(--blue);
+    transition: 0.4s;
+    /* padding: 20px; */
+    gap: 15px;
+    z-index: 250;
+    text-align: left;
+    overflow-y: auto;
+  }
+
+  /* Jab menu 'active' ho */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 0;
+  }
+
+  /* Dropdown setup for mobile */
+  .dropdown-content {
+    position: static;
+    display: none; /* Click par khulne ke liye */
+    background: rgba(0,0,0,0.1);
+    box-shadow: none;
+    padding-left: 20px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block; /* Mobile par hover ya toggle dono kaam karenge */
+  }
+
 }
